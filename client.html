@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twidder</title>
+    <link rel="stylesheet" href="client.css">
+    <script src="client.js" defer></script>
+    <script src="serverstub.js" defer></script>
+</head>
+<body>
+    <div id="app"></div> <!-- JavaScript でビューを挿入 -->
+
+    <script type="text/view" id="welcomeview">
+        <div id="welcome-container">
+            <div id="logo-container">
+                <img src="wimage.png" alt="Twidder Logo">
+            </div>
+
+            <div id="form-container">
+                <div id="login-container">
+                    <div class="form-group">
+                        <label for="signin-email">Email:</label>
+                        <input type="email" id="signin-email" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="signin-password">Password:</label>
+                        <input type="password" id="signin-password" placeholder="">
+                    </div>
+                    <button id="signin-button">LogIn</button>
+                </div>
+
+                <div id="signup-container">
+                    <h2>Sign up here</h2>
+                    <div class="form-group">
+                        <label for="signup-firstname">First Name:</label>
+                        <input type="text" id="signup-firstname" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-familyname">Family Name:</label>
+                        <input type="text" id="signup-familyname" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-gender">Gender:</label>
+                        <select id="signup-gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-city">City:</label>
+                        <input type="text" id="signup-city" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-country">Country:</label>
+                        <input type="text" id="signup-country" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email:</label>
+                        <input type="email" id="signup-email" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password:</label>
+                        <input type="password" id="signup-password" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password-repeat">Repeat PSW:</label>
+                        <input type="password" id="signup-password-repeat" placeholder="">
+                    </div>
+                    <button id="signup-button">SignUp</button>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/view" id="profileview">
+        <div id="main-container">
+            
+            <!-- 左1/4: タブメニュー -->
+            <div id="tab-menu">
+                <button class="tab-button active" data-tab="home">Home</button>
+                <button class="tab-button" data-tab="browse">Browse</button>
+                <button class="tab-button" data-tab="account">Account</button>
+            </div>
+    
+            <!-- 右3/4: タブコンテンツ -->
+            <div id="content-container">
+                <!-- Homeタブ（全メッセージ & 投稿） -->
+                <div id="home" class="tab-content">
+                    <h2>All Messages</h2>
+                    <div id="all-messages-list"></div>
+                    <div id="message-input-container">
+                        <textarea id="message-input" placeholder="Write your message..."></textarea>
+                        <button id="post-message-button" class="profile-button">Post</button>
+                    </div>
+                </div>
+    
+                <!-- 🔍 Browseタブ（他ユーザー検索 & プロフィール表示） -->
+                <div id="browse" class="tab-content hidden">
+                    <h2>Search User</h2>
+                    <input type="text" id="search-user-email" placeholder="Enter user email">
+                    <button id="search-user-button" class="profile-button">Search</button>
+                    
+                    <div id="search-results">
+                        <h3>Profile</h3>
+                        <div id="searched-user-info" class="user-info">
+                            <p><strong>First Name:</strong> <span id="searched-profile-firstname"></span></p>
+                            <p><strong>Family Name:</strong> <span id="searched-profile-familyname"></span></p>
+                            <p><strong>Email:</strong> <span id="searched-profile-email"></span></p>
+                            <p><strong>Gender:</strong> <span id="searched-profile-gender"></span></p>
+                            <p><strong>City:</strong> <span id="searched-profile-city"></span></p>
+                            <p><strong>Country:</strong> <span id="searched-profile-country"></span></p>
+                        </div>
+                
+                        <h3>Wall</h3>
+                        <div id="searched-user-messages-list"></div>
+                
+                        <textarea id="searched-user-message-input" placeholder="Write your message..."></textarea>
+                        <button id="searched-user-post-message-button" class="profile-button">Post</button>
+                        <button id="reload-searched-user-messages-button" class="profile-button">Reload</button>
+                    </div>
+                </div>
+    
+                <!-- Accountタブ（プロフィール & パスワード変更） -->
+                <div id="account" class="tab-content hidden">
+                    <h1>Profile</h1>
+                    <p>Welcome, <span id="username"></span>!</p>
+    
+                    <div id="user-info">
+                        <p><strong>First Name:</strong> <span id="profile-firstname"></span></p>
+                        <p><strong>Family Name:</strong> <span id="profile-familyname"></span></p>
+                        <p><strong>Email:</strong> <span id="profile-email"></span></p>
+                        <p><strong>Gender:</strong> <span id="profile-gender"></span></p>
+                        <p><strong>City:</strong> <span id="profile-city"></span></p>
+                        <p><strong>Country:</strong> <span id="profile-country"></span></p>
+                    </div>
+    
+                    <h2>Change Password</h2>
+                    <div class="profile-form-group">
+                        <label for="current-password">Current Password:</label>
+                        <input type="password" id="current-password">
+                    </div>
+                    <div class="profile-form-group">
+                        <label for="new-password">New Password:</label>
+                        <input type="password" id="new-password">
+                    </div>
+                    <div class="profile-form-group">
+                        <label for="repeat-new-password">Repeat New Password:</label>
+                        <input type="password" id="repeat-new-password">
+                    </div>
+                    <button id="change-password-button" class="profile-button">Change</button>
+                    <button id="signout-button" class="profile-button">Sign Out</button>
+                </div>
+            </div>
+    
+        </div>
+    </script>
+</body>
+</html>
