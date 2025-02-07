@@ -1,0 +1,353 @@
+/* 背景設定 */
+body {
+    background-color: #2b739e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* メインコンテナ */
+#welcome-container {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* ロゴ＆スローガン */
+#logo-container {
+    width: 340px;
+    height: 400px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo-container img {
+    width: 100%;
+}
+
+/* ログイン・サインアップフォームのコンテナ */
+#form-container {
+    width: 250px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* フォーム共通 */
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1px;
+    justify-content: space-between;
+}
+
+/* ラベル */
+.form-group label {
+    width: 110px;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* ログインフォーム */
+#login-container {
+    width: 248px;
+    height: auto;
+    padding: 16px 1px 1px;
+    margin-bottom: 5px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* サインアップフォーム */
+#signup-container {
+    width: 248px;
+    height: auto;
+    padding: 5px 1px 1px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: space-between;
+}
+
+/* フォーム要素 */
+input, select {
+    width: 140px;
+    padding: 3px;
+    margin: 1px 0;
+}
+
+button {
+    width: 50px;
+    height: 20px;
+    padding: 0px;
+    margin: 1px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* 🌟 メインレイアウト（4分割） */
+#main-container {
+    display: flex;
+    width: 600px;
+    height: 100vh;
+}
+
+/* 🌟 左1/4: タブメニュー */
+#tab-menu {
+    width: 25%;
+    background-color: #007bff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* タブボタン（縦配置） */
+.tab-button {
+    width: 80%;
+    padding: 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.tab-button:hover {
+    background-color: #0056b3;
+}
+
+.tab-button.active {
+    background-color: #0056b3;
+    font-weight: bold;
+}
+
+/* 🌟 右3/4: タブコンテンツ（共通設定） */
+#content-container {
+    width: 75%;
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* タブコンテンツの非表示制御 */
+.hidden {
+    display: none;
+}
+
+/* 🌟 ユーザー検索タブ */
+#search-container {
+    width: 100%;
+    padding: 20px;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ユーザー検索結果 */
+#search-results {
+    width: 95%;
+    max-height: 450px;
+    overflow-y: auto;
+    text-align: left;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+/* ユーザー検索結果のメッセージ */
+.search-message-card {
+    padding: 8px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 🌟 メッセージタブ */
+#message-container {
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* メッセージ一覧（新しい投稿が上に来る） */
+#all-messages-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* メッセージ投稿エリア（画面下部） */
+#message-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    border-top: 1px solid #ddd;
+}
+
+#message-input {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* 🌟 プロフィールタブ */
+#profile-container {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: -2px 0px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* プロフィール情報の表示 */
+#user-info {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#user-info p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5px 0;
+}
+
+#user-info strong {
+    min-width: 120px; /* ラベルの統一幅 */
+    display: inline-block;
+    text-align: left;
+}
+
+#user-info span {
+    flex-grow: 1; /* ラベルと値の間にスペースを開ける */
+}
+
+/* ボタンデザイン */
+.profile-button {
+    width: 100%;
+    margin: 5px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.profile-button:hover {
+    background-color: #0056b3;
+}
+
+/* 🌟 ユーザー検索入力欄 */
+#search-user-email {
+    width: 98%; /* 🔥 幅を広げる */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+/* 🌟 パスワード変更フォーム */
+.profile-form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* 🔥 横幅を広げる */
+    margin-bottom: 10px;
+}
+
+/* 入力欄のデザイン統一 */
+.profile-form-group input {
+    width: 50%; /* 🔥 入力欄を広げる */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 🔍 Browseタブ - ユーザー情報のスタイル */
+#searched-user-info {
+    width: 90%;
+    min-height: 180px; /* 🔥 高さを広げる */
+    padding: 15px; /* 🔥 内側に余白を追加 */
+    margin-top: 10px;
+    background-color: #f1f1f1; /* 🔥 背景色を淡くする */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; /* 🔥 各項目を均等に配置 */
+}
+
+/* 🔹 Browseタブ - ユーザー情報のラベルと値を見やすくする */
+#searched-user-info p {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 5px 0;
+}
+
+#searched-user-info strong {
+    min-width: 120px; /* 🔥 ラベル幅を統一 */
+    display: inline-block;
+    text-align: left;
+}
+
+#searched-user-info span {
+    flex-grow: 1; /* 🔥 値のエリアを広げる */
+}
